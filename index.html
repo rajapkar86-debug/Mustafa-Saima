@@ -178,10 +178,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .vaddr{font-size:18px;color:rgba(246,236,215,.8);line-height:1.55}
 .btn{display:inline-block;margin-top:24px;padding:14px 30px;border:1px solid var(--gold);border-radius:999px;font-family:var(--sans);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:background .3s,color .3s,transform .3s}
 .btn:hover,.btn:active{background:var(--gold);color:#2c1d05;transform:translateY(-2px)}
-.btn.solid{background:linear-gradient(180deg,var(--gold-light),var(--gold) 60%,var(--gold-deep));color:#2c1d05;border-color:transparent;box-shadow:0 10px 26px rgba(0,0,0,.35);display:inline-flex;align-items:center;gap:12px;padding:16px 32px}
-.btn.solid svg{width:18px;height:18px;flex:none}
-.btn.solid:hover,.btn.solid:active{filter:brightness(1.08)}
-.rsvp-note{font-style:italic;color:rgba(246,236,215,.78);font-size:19px;margin-top:14px}
 
 .count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:420px;margin:28px auto 18px}
 .cell{border:1px solid rgba(212,175,106,.45);border-radius:14px;padding:16px 4px 12px;background:rgba(255,255,255,.03)}
@@ -306,15 +302,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <p class="cap rv" style="--d:.2s" id="cap">until the celebration begins</p>
   </section>
 
-  <section class="sec">
-    <p class="caps rv">Kindly RSVP</p>
-    <p class="rsvp-note rv" style="--d:.1s">Let the families know you&rsquo;re joining us</p>
-    <a class="btn solid rv" style="--d:.2s" id="rsvp" href="https://wa.me/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5A8.5 8.5 0 1 1 21 11.5Z"/><path d="m8.5 11.5 2.2 2.2 4.3-4.4"/></svg>
-      RSVP on WhatsApp
-    </a>
-  </section>
-
   <footer class="sec foot">
     <div class="orn rv"><span>✦</span></div>
     <p class="arabic rv" style="--d:.1s">بَارَكَ ٱللَّٰهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
@@ -325,13 +312,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <script>
 (function(){
-  /* RSVP: put the WhatsApp number to receive replies here, with country code, digits only (e.g. '919876543210').
-     If left empty, WhatsApp opens with the message ready and lets the guest pick a contact. */
-  var WHATSAPP_NUMBER = '';
-  var RSVP_MESSAGE = 'Assalamu Alaikum! I will be attending the Walima of Mustafa & Saima on 24 December 2026. InshaAllah.';
-
   var $ = function(s){return document.querySelector(s)};
-  $('#rsvp').href = 'https://wa.me/' + WHATSAPP_NUMBER.replace(/\D/g,'') + '?text=' + encodeURIComponent(RSVP_MESSAGE);
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var K = reduce ? .2 : 1;
 
